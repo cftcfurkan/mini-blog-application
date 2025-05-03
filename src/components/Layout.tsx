@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4 items-center relative min-h-[48px] hidden md:flex">
           <nav className="absolute left-1/2 -translate-x-1/2 gap-10 text-sm flex">
             <span className="opacity-60 cursor-pointer flex relative group">About <span className="ml-1"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1" xmlns="http://www.w3.org/2000/svg"><path d="M4 6L8 10L12 6" stroke="#01C8FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span></span>
-            <span className="opacity-60 cursor-pointer font-semibold">FAQ</span>
+            <span className="cursor-pointer font-semibold">FAQ</span>
             <span className="opacity-60 cursor-pointer flex relative group">Trader's Library <span className="ml-1"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1" xmlns="http://www.w3.org/2000/svg"><path d="M4 6L8 10L12 6" stroke="#01C8FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span></span>
             <span className="opacity-60 cursor-pointer">Affiliate</span>
             <span className="opacity-60 cursor-pointer">LeaderBoard</span>

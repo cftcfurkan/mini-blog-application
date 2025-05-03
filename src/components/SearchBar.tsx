@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { tags } from "@/data/tags";
+import Tag from "./Tags";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  return (
+  const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
+    return (
     <div className="mb-6">
       <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-2 flex justify-center">
         <p className="text-white md:text-5xl text-3xl font-bold">Blog</p>
       </div>
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full flex flex-col items-center gap-4 justify-center">
         <div className="relative w-full max-w-5xl">
           <input
             type="text"
@@ -48,6 +51,25 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                 />
               </button>
             </div>
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-2 w-full justify-start max-w-5xl ">
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Tag
+                key={tag}
+                selected={selectedTags.includes(tag)}
+                onClick={() => {
+                  setSelectedTags((prev) =>
+                    prev.includes(tag)
+                      ? prev.filter((t) => t !== tag)
+                      : [...prev, tag]
+                  );
+                }}
+              >
+                {tag}
+              </Tag>
+            ))}
           </div>
         </div>
       </div>
