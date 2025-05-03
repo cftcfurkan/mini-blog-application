@@ -18,6 +18,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => (
         .map((post) => (
           <PostCard
             post={post}
+            key={post.id}
             {...post}
             category={
               categories[Math.floor(Math.random() * categories.length)].name

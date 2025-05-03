@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import DarkModeToggle from '@/components/DarkModeToggle';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,8 +12,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0f1020]">
       <header className="w-full bg-transparent py-4">
+        <DarkModeToggle />
         <div className="max-w-7xl mx-auto px-4 items-center relative min-h-[48px] hidden md:flex">
           <nav className="absolute left-1/2 -translate-x-1/2 gap-10 text-sm flex">
             <span className="opacity-60 cursor-pointer flex relative group">About <span className="ml-1"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1" xmlns="http://www.w3.org/2000/svg"><path d="M4 6L8 10L12 6" stroke="#01C8FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span></span>
@@ -26,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 className="font-bold text-white text-sm px-3 py-2 bg-[#181a2a] rounded-xl cursor-pointer"
                 style={{ boxShadow: '0 0 0 1.5px #23244a' }}
               >
-                Trader's Place
+                Trading Place
               </button>
             </div>
             <span className="flex items-center px-2 py-1 rounded-lg bg-transparent border-none">
@@ -62,7 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               className="font-bold text-white text-sm px-3 py-2 bg-[#181a2a] rounded-xl cursor-pointer"
               style={{ boxShadow: '0 0 0 1.5px #23244a' }}
             >
-              Trader's Place
+              Trading Place
             </button>
           </div>
         </div>
@@ -79,6 +82,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

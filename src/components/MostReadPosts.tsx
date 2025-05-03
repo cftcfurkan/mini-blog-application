@@ -7,7 +7,7 @@ import { categories } from "@/data/categories";
 const MostReadPosts = ({ posts }: { posts: Post[] }) => (
   <section>
   <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
-  <div className="flex flex-col gap-3 min-h-[1200px] overflow-auto pr-2">
+  <div className="flex flex-col gap-3 max-h-[1200px] overflow-auto pr-2">
     {posts.map((post) => (
       <PostCard
         key={post.id}
