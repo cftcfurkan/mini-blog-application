@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
+const API_BASE_URL = "https://jsonplaceholder.typicode.com";
 
 export interface Post {
   id: number;
@@ -17,4 +17,4 @@ export const fetchPosts = async (): Promise<Post[]> => {
 export const getPostById = async (id: number): Promise<Post> => {
   const response = await axios.get(`${API_BASE_URL}/posts/${id}`);
   return response.data;
-}; 
+};

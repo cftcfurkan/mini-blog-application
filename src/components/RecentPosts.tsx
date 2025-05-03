@@ -22,6 +22,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
               categories[Math.floor(Math.random() * categories.length)].name
             }
             date={dates[Math.floor(Math.random() * dates.length)].date}
+            variant="default"
           />
         ))}
         <div className="col-span-2 rounded-xl overflow-hidden">
