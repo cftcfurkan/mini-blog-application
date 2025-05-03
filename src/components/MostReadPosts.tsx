@@ -6,23 +6,22 @@ import { categories } from "@/data/categories";
 
 const MostReadPosts = ({ posts }: { posts: Post[] }) => (
   <section>
-  <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
-  <div className="flex flex-col gap-3 max-h-[1200px] overflow-auto pr-2">
-    {posts.map((post) => (
-      <PostCard
-        key={post.id}
-        post={post}
-        {...post}
-        category={
-          categories[Math.floor(Math.random() * categories.length)].name
-        }
-        date={dates[Math.floor(Math.random() * dates.length)].date}
-        small
-      />
-    ))}
-  </div>
-</section>
-
+    <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
+    <div className="flex flex-col gap-3 max-h-[1210px] overflow-auto pr-2">
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          post={post}
+          {...post}
+          category={
+            categories[Math.floor(Math.random() * categories.length)].name
+          }
+          date={dates[Math.floor(Math.random() * dates.length)].date}
+          small
+        />
+      ))}
+    </div>
+  </section>
 );
 
 export default MostReadPosts;

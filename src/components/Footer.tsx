@@ -33,7 +33,7 @@ const Footer = () => (
           <ul key={i} className="space-y-4">
             {col.map((link) => (
               <li key={link}>
-                <a href="#" className="text-[#727581] hover:text-white font-medium text-base transition">
+                <a href="#" className="text-[#727581] hover:text-white family font-medium text-base transition">
                   {link}
                 </a>
               </li>

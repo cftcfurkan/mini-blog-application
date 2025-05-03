@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0f1020]">
+    <div className="min-h-screen">
       <header className="w-full bg-transparent py-4">
         <DarkModeToggle />
         <div className="max-w-7xl mx-auto px-4 items-center relative min-h-[48px] hidden md:flex">
