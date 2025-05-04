@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
+import { ReduxProvider } from "@/store/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
     >
       <body className={inter.className + " relative"}>
         <div
-          className="absolute inset-0 -z-10 blur-xl "
+          className="absolute inset-0 -z-10 blur-xl"
           style={{
             backgroundImage: `
             linear-gradient(
@@ -48,10 +49,11 @@ export default function RootLayout({
             backgroundSize: "100% 100%",
             backgroundRepeat: "repeat",
             minHeight: "100vh",
-            color: "white",
           }}
         />
-        <Providers>{children}</Providers>
+        <ReduxProvider>
+          <Providers>{children}</Providers>
+        </ReduxProvider>
       </body>
     </html>
   );

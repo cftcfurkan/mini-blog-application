@@ -94,7 +94,10 @@ export default function PostPage() {
         </div>
       </>
       <div className="flex flex-col md:flex-row gap-8">
-        <MostReadPosts posts={posts} variant={isMobile ? "compact" : "mostRead"} />
+        <MostReadPosts
+          posts={posts}
+          variant={isMobile ? "compact" : "mostRead"}
+        />
         <Categories />
       </div>
     </Layout>
