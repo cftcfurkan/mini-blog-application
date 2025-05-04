@@ -4,6 +4,7 @@ import { tags } from "@/data/tags";
 import Tag from "./Tags";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }

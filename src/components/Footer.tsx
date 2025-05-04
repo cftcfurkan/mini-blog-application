@@ -121,6 +121,7 @@ const Footer = () => {
             </ul>
           ))}
         </div>
+
         <hr className="border-[#39305a] mb-6 " />
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 h-50 md:h-auto">
           <div className="flex-1 flex justify-end">
