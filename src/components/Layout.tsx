@@ -24,9 +24,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <span className="opacity-60 cursor-pointer">LeaderBoard</span>
           </nav>
           <div className="flex items-center gap-2 ml-auto">
-            <div className="relative rounded-xl p-[3px] bg-gradient-to-r from-[#7F5FFF] to-[#01C8FF]">
+            <div className="relative rounded-md p-[3px] bg-gradient-to-r from-[#7F5FFF] to-[#01C8FF]">
               <button
-                className="font-bold text-white text-sm px-3 py-2 bg-[#181a2a] rounded-xl cursor-pointer"
+                className="font-bold text-white text-sm px-2 py-1 bg-[#181a2a] rounded-md cursor-pointer"
                 style={{ boxShadow: '0 0 0 1.5px #23244a' }}
               >
                 Trading Place
