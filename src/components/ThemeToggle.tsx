@@ -1,30 +1,43 @@
 'use client';
-import { useAppDispatch} from '@/store/hooks';
-import { toggleTheme } from '@/store/themeSlice';
+
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const dispatch = useAppDispatch();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleToggle = () => {
-    dispatch(toggleTheme());
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   if (!mounted) {
-    return null;
+    return (
+      <button
+        className="p-2 rounded-full cursor-pointer transition-colors duration-300"
+        aria-label="Toggle theme"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-gray-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          />
+        </svg>
+      </button>
+    );
   }
 
   return (
     <button
-      onClick={handleToggle}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-full cursor-pointer transition-colors duration-300"
       aria-label="Toggle theme"
     >

@@ -34,10 +34,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
           </div>
         ))}
 
-        <Link
-          href={`/posts/${1}`}
-          className="col-span-2 rounded-xl overflow-hidden hidden md:block"
-        >
+        <div className="col-span-2 rounded-xl overflow-hidden hidden md:block">
           <div className="relative w-full aspect-[16/13]">
             <Image
               src="https://picsum.photos/seed/1/1000/1000"
@@ -46,7 +43,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
               className="object-cover"
             />
           </div>
-        </Link>
+        </div>
         {nextFour.map((post) => (
           <div key={post.id} className="hidden md:block col-span-1">
             <PostCard

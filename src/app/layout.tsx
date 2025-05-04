@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
-import { ReduxProvider } from "@/store/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,9 +50,7 @@ export default function RootLayout({
             minHeight: "100vh",
           }}
         />
-        <ReduxProvider>
-          <Providers>{children}</Providers>
-        </ReduxProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
