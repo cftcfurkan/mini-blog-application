@@ -62,7 +62,7 @@ export default function PostPage() {
             {formattedDate}
           </p>
         </div>
-        <div className="flex justify-start gap-2 items-center mb-4">
+        <div className="flex justify-start pl-2 gap-2 items-center mb-4">
           <p className="whitespace-pre-line">
             Author:
           </p>

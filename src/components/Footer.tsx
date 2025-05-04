@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
+
 const footerLinks = [
   ["About us", "Contact us", "Careers"],
   ["FAQ", "Blog", "Lexicon"],
@@ -30,10 +31,12 @@ const socialIcons = [
 ];
 
 const Footer = () => {
-  const isDark = useSelector((state: RootState) => state.theme.isDarkMode);
+
+const mode = useSelector((state: RootState) => state.theme.mode);
+const isDark = mode === 'dark';
 
   return (
-    <footer className="w-full mt-16">
+    <footer className="w-full">
       <div className="max-w-7xl mx-auto px-4">
         <hr className="border-[#39305a] w-full mb-8" />
         <div className="grid grid-cols-2 gap-6 md:hidden mb-8">
@@ -127,19 +130,27 @@ const Footer = () => {
           ))}
         </div>
 
-        <hr className="border-[#39305a] mb-6 " />
+        <hr className="border-[#39305a] mb-2" />
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 h-50 md:h-auto">
           <div className="flex-1 flex justify-end">
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="#a09bb7"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            <span className="ml-1">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  className="ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 6L8 10L12 6"
+                    stroke="#7F5FFF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
           </div>
         </div>
       </div>

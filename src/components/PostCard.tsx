@@ -25,7 +25,7 @@ const PostCard = ({
     <Link href={{ pathname: `/posts/${id}`, query: { category, date } }}>
       {variant === "compact" && (
         <div className="flex items-center gap-3 cursor-pointer rounded-xl p-2 hover:shadow-lg transition">
-          <div className="w-25 h-25 relative flex-shrink-0 rounded-xl overflow-hidden">
+          <div className="w-22.5 h-22.5 relative flex-shrink-0 rounded-xl overflow-hidden">
             <Image
               src={`https://picsum.photos/seed/${id}/100/100`}
               alt={title}
@@ -41,7 +41,7 @@ const PostCard = ({
       )}
 
       {variant === "mostRead" && (
-        <div className="flex gap-4 rounded-xl p-3 hover:shadow-lg transition">
+        <div className="flex gap-4 rounded-xl pt-4 hover:shadow-lg transition">
           <div className="w-75 h-50 relative flex-shrink-0 rounded-xl overflow-hidden">
             <Image
               src={`https://picsum.photos/seed/${id}/120/120`}
@@ -68,7 +68,7 @@ const PostCard = ({
 
       {variant === "default" && (
         <>
-          <div className="w-full h-60 relative">
+          <div className="w-full h-50 relative">
             <Image
               src={`https://picsum.photos/seed/${id}/600/300`}
               alt={title}

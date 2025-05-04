@@ -4,6 +4,7 @@ import { Post } from "@/services/api";
 import { dates } from "@/data/dates";
 import { categories } from "@/data/categories";
 import Image from "next/image";
+import Link from "next/link";
 
 const RecentPosts = ({ posts }: { posts: Post[] }) => {
   const visiblePostsMobile = posts.slice(0, 4);
@@ -33,7 +34,10 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
           </div>
         ))}
 
-        <div className="col-span-2 rounded-xl overflow-hidden hidden md:block">
+        <Link
+          href={`/posts/${1}`}
+          className="col-span-2 rounded-xl overflow-hidden hidden md:block"
+        >
           <div className="relative w-full aspect-[16/13]">
             <Image
               src="https://picsum.photos/seed/1/1000/1000"
@@ -42,7 +46,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
               className="object-cover"
             />
           </div>
-        </div>
+        </Link>
         {nextFour.map((post) => (
           <div key={post.id} className="hidden md:block col-span-1">
             <PostCard

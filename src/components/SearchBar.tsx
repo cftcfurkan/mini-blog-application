@@ -18,7 +18,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <div className="md:mb-6">
-      <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-6rec flex justify-center">
+      <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-6 flex justify-center">
         <p className="md:text-5xl text-3xl font-bold">Blog</p>
       </div>
       <div className="w-full flex flex-col items-center gap-4 justify-center">
