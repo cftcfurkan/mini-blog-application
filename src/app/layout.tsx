@@ -35,14 +35,14 @@ export default function RootLayout({
             backgroundImage: `
             linear-gradient(
               to bottom,
-              #0f1020 5%,
-              rgb(41, 19, 85) 10%,
+              #0f1020 2%,
+              rgb(28, 10, 65) 10%,
               #0f1020 20%,
               #0f1020 40%,
-              rgb(41, 19, 85) 50%,
+              rgb(28, 10, 65) 50%,
               #0f1020 60%,
               #0f1020 95%,
-              rgb(41, 19, 85) 100%
+              rgb(28, 10, 65) 100%
             )
           `,
             backgroundSize: "100% 100%",

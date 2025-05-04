@@ -10,24 +10,32 @@ const MostReadPosts = ({
 }: {
   posts: Post[];
   variant: "mostRead" | "compact";
-}) => (
-  <section>
-    <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
-    <div className="flex flex-col gap-3 max-h-[1210px] overflow-auto pr-2">
-      {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          post={post}
-          {...post}
-          category={
-            categories[Math.floor(Math.random() * categories.length)].name
-          }
-          date={dates[Math.floor(Math.random() * dates.length)].date}
-          variant={variant}
-        />
-      ))}
-    </div>
-  </section>
-);
+}) => {
+  const limitedPosts = variant === "mostRead" ? posts.slice(0, 3) : posts;
+
+  return (
+    <section>
+      <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
+      <div
+        className={`flex flex-col gap-3 ${
+          variant === "compact" ? "max-h-[1210px] overflow-auto pr-2" : ""
+        }`}
+      >
+        {limitedPosts.map((post) => (
+          <PostCard
+            key={post.id}
+            post={post}
+            {...post}
+            category={
+              categories[Math.floor(Math.random() * categories.length)].name
+            }
+            date={dates[Math.floor(Math.random() * dates.length)].date}
+            variant={variant}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default MostReadPosts;

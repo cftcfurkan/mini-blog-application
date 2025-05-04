@@ -15,8 +15,8 @@ const Categories = () => {
             className="flex justify-between items-center py-2 border-b border-[#a09bb7]"
           >
             <span className="text-[#fff]">{cat.name}</span>
-            <div className="p-[1px] rounded-xl bg-gradient-to-r from-[#7F5FFF] to-[#01C8FF] inline-block">
-              <span className="bg-[#23244a] text-white text-sm px-4 py-1 rounded-xl block">
+            <div className="p-[2px] rounded-xl bg-gradient-to-r from-[#7F5FFF] to-[#01C8FF] inline-block">
+              <span className="bg-[#000000] text-white text-sm px-4 py-1 rounded-xl block">
                 {cat.count}
               </span>
             </div>
