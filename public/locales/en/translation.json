@@ -1,0 +1,74 @@
+{
+  "common": {
+    "search": "Search",
+    "write_here": "Write here...",
+    "blog": "Blog",
+    "toggle_theme": "Toggle theme"
+  },
+  "categories": {
+    "Finance": "Finance",
+    "Invest": "Invest",
+    "Work": "Work",
+    "Money": "Money",
+    "Investment": "Investment",
+    "News": "News",
+    "All": "All"
+  },
+  "titles": {
+    "most_read": "Most Read",
+    "featured": "Featured Posts",
+    "recent": "Recent Posts",
+    "categories": "Categories",
+    "blog": "Blog"
+  },
+  "navbar": {
+    "about": "About",
+    "faq": "FAQ",
+    "traders_library": "Trader's Library",
+    "affiliate": "Affiliate",
+    "leaderboard": "LeaderBoard",
+    "trading_place": "Trading Place"
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "social": "Social",
+    "follow_us": "Follow Us",
+    "newsletter": "Newsletter",
+    "subscribe": "Subscribe",
+    "email_placeholder": "Enter your email",
+    "economic_calendar": "Economic Calendar",
+    "trading_updates": "Trading Updates",
+    "symbols": "Symbols",
+    "market_hours": "Market Hours",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "cookies_policy": "Cookies Policy",
+    "lexicon": "Lexicon",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "recent": "Recent",
+    "featured": "Featured",
+    "most_read": "Most Read",
+    "x": "X",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "linkedin": "LinkedIn",
+    "discord": "Discord"
+  },
+  "author": "Author",
+  "months": {
+    "Sep": "Sep",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dec": "Dec",
+    "Jan": "Jan"
+  }
+} 

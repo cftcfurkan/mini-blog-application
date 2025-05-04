@@ -1,34 +1,45 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-
-const footerLinks = [
-  ["About us", "Contact us", "Careers"],
-  ["FAQ", "Blog", "Lexicon"],
-  ["Economic Calendar", "Trading Updates", "Symbols", "Market Hours"],
-  ["Privacy Policy", "Terms & Conditions", "Cookies Policy"],
-];
-
-const footerLinksMobile = [
-  "Economic Calendar",
-  "Trading Updates",
-  "Symbols",
-  "Market Hours",
-  "Privacy Policy",
-  "Terms & Conditions",
-  "Cookies Policy",
-];
-
-const socialIcons = [
-  { name: "X", src: "/icons/x.png" },
-  { name: "Instagram", src: "/icons/instagram.png" },
-  { name: "Facebook", src: "/icons/facebook.png" },
-  { name: "YouTube", src: "/icons/youtube.png" },
-  { name: "LinkedIn", src: "/icons/linkedin.png" },
-  { name: "Discord", src: "/icons/discord.png" },
-];
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const footerLinks = [
+    [t("footer.about"), t("footer.contact"), t("footer.careers")],
+    [t("footer.faq"), t("footer.blog"), t("footer.lexicon")],
+    [
+      t("footer.economic_calendar"),
+      t("footer.trading_updates"),
+      t("footer.symbols"),
+      t("footer.market_hours"),
+    ],
+    [
+      t("footer.privacy_policy"),
+      t("footer.terms_conditions"),
+      t("footer.cookies_policy"),
+    ],
+  ];
+
+  const footerLinksMobile = [
+    t("footer.economic_calendar"),
+    t("footer.trading_updates"),
+    t("footer.symbols"),
+    t("footer.market_hours"),
+    t("footer.privacy_policy"),
+    t("footer.terms_conditions"),
+    t("footer.cookies_policy"),
+  ];
+
+  const socialIcons = [
+    { name: t("footer.x"), src: "/icons/x.png" },
+    { name: t("footer.instagram"), src: "/icons/instagram.png" },
+    { name: t("footer.facebook"), src: "/icons/facebook.png" },
+    { name: t("footer.youtube"), src: "/icons/youtube.png" },
+    { name: t("footer.linkedin"), src: "/icons/linkedin.png" },
+    { name: t("footer.discord"), src: "/icons/discord.png" },
+  ];
   const { theme } = useTheme();
 
   return (
@@ -38,12 +49,12 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-6 md:hidden mb-8">
           <ul className="space-y-4">
             {[
-              "About us",
-              "Contact us",
-              "Careers",
-              "FAQ",
-              "Blog",
-              "Lexicon",
+              t("footer.about"),
+              t("footer.contact"),
+              t("footer.careers"),
+              t("footer.faq"),
+              t("footer.blog"),
+              t("footer.lexicon"),
             ].map((link) => (
               <li key={link}>
                 <a

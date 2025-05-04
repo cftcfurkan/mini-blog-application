@@ -4,15 +4,15 @@ import { Post } from "@/services/api";
 import { dates } from "@/data/dates";
 import { categories } from "@/data/categories";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const RecentPosts = ({ posts }: { posts: Post[] }) => {
   const visiblePostsMobile = posts.slice(0, 4);
   const nextFour = posts.slice(2, 6);
-
+  const { t } = useTranslation();
   return (
     <section>
-      <h2 className="text-3xl font-bold mb-3">Recent post</h2>
+      <h2 className="text-3xl font-bold mb-3"> {t("titles.recent")}</h2>
       <div className="grid grid-cols-2 gap-4">
         {visiblePostsMobile.map((post, index) => (
           <div

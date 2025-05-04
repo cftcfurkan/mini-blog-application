@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { categories } from "@/data/categories";
 import { tags } from "@/data/tags";
 import Tag from "./Tags";
-import useIsMobile from "@/hooks/useIsMobile";
+import { useTranslation } from "react-i18next";
 
 const Categories = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
-  const isMobile = useIsMobile();
+  const { t } = useTranslation();
   return (
     <section>
-      <h2 className="text-3xl font-bold mb-3">Categories</h2>
+      <h2 className="text-3xl font-bold mb-3">{t("titles.categories")}</h2>
       <ul className="mb-4">
         {categories.map((cat, i) => (
           <li
             key={i}
             className="flex justify-between items-center py-2 border-b border-[#a09bb7]"
           >
-            <span>{cat.name}</span>
+            <span>{t(`categories.${cat.name}`)}</span>
             <div className="inline-block rounded-xl md:bg-gradient-to-r md:from-[#7F5FFF] md:to-[#01C8FF] p-[2px]">
               <span
                 className="block rounded-xl px-4 py-1 text-sm text-white md:hidden"
@@ -44,7 +44,7 @@ const Categories = () => {
               );
             }}
           >
-            {tag}
+            {t(`categories.${tag}`)}
           </Tag>
         ))}
       </div>

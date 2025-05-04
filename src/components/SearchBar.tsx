@@ -5,6 +5,7 @@ import Image from "next/image";
 import { tags } from "@/data/tags";
 import Tag from "./Tags";
 import { useTheme } from "next-themes";
+import { useTranslation } from 'react-i18next';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -14,6 +15,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -24,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
     <div className="md:mb-6">
       <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-6 flex justify-center">
-        <p className="md:text-5xl text-3xl font-bold">Blog</p>
+        <p className="md:text-5xl text-3xl font-bold">{t('common.blog')}</p>
       </div>
       <div className="w-full flex flex-col items-center gap-4 justify-center">
         <div className="relative w-full max-w-5xl">
@@ -32,10 +34,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             type="text"
             value={searchQuery}
             onChange={handleSearch}
-            placeholder="Write here..."
+            placeholder={t('common.write_here')}
             className={`
               w-full pl-6 pr-14 py-4
               rounded-xl
+              text-white
               placeholder:text-[#5a4a7a]
               border border-[#2a204a]
               outline-none
@@ -62,7 +65,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                   src="/search-refraction.svg"
                   width={30}
                   height={30}
-                  alt="Search"
+                  alt={t('common.search')}
                 />
               </button>
             </div>
@@ -82,7 +85,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                   );
                 }}
               >
-                {tag}
+                {t(`categories.${tag}`)}
               </Tag>
             ))}
           </div>

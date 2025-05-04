@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
+import I18nProvider from "./i18n-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,7 +51,9 @@ export default function RootLayout({
             minHeight: "100vh",
           }}
         />
-        <Providers>{children}</Providers>
+        <I18nProvider>
+          <Providers>{children}</Providers>
+        </I18nProvider>
       </body>
     </html>
   );

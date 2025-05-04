@@ -3,6 +3,7 @@ import PostCard from "./PostCard";
 import { Post } from "@/services/api";
 import { dates } from "@/data/dates";
 import { categories } from "@/data/categories";
+import { useTranslation } from "react-i18next";
 
 const MostReadPosts = ({
   posts,
@@ -12,14 +13,16 @@ const MostReadPosts = ({
   variant: "mostRead" | "compact";
 }) => {
   const limitedPosts = variant === "mostRead" ? posts.slice(0, 3) : posts;
-
+  const { t } = useTranslation();
   return (
     <section>
-      <h2 className="text-3xl font-bold mb-3">Most read</h2>
+      <h2 className="text-3xl font-bold mb-3"> {t("titles.most_read")}</h2>
       <div
-       className={`flex flex-col gap-3 ${
-        variant === "compact" ? "max-h-[930px] md:max-h-[1050px] md:overflow-auto overflow-hidden" : ""
-      }`}
+        className={`flex flex-col gap-3 ${
+          variant === "compact"
+            ? "max-h-[930px] md:max-h-[1050px] md:overflow-auto overflow-hidden"
+            : ""
+        }`}
       >
         {limitedPosts.map((post) => (
           <PostCard

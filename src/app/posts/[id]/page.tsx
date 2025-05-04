@@ -10,11 +10,13 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import Categories from "@/components/Categories";
 import MostReadPosts from "@/components/MostReadPosts";
 import useIsMobile from "@/hooks/useIsMobile";
+import { useTranslation } from "react-i18next";
 
 export default function PostPage() {
   const searchParams = useSearchParams();
   const params = useParams();
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
   const id = params.id;
   const category = searchParams.get("category") || "Unknown";
   const date = searchParams.get("date") || "Unknown";
@@ -54,18 +56,23 @@ export default function PostPage() {
     <Layout>
       <>
         <p className="text-4xl w-full font-bold mb-4">
-          {post.title}
+          {t(`posts.${post.title}`)}
         </p>
         <div className="flex justify-start gap-4 items-center mb-4">
-          <Tag selected>{category}</Tag>
-          <p className=" whitespace-pre-line">
-            {formattedDate}
-          </p>
+          <Tag selected>{t(`categories.${category}`)}</Tag>
+          {date && (
+            <span className="text-md">
+              {(() => {
+                const parts = date.split(" ");
+                const month = parts[0]; // "Oct"
+                const dayYear = parts.slice(1).join(" "); // "05. 2024"
+                return `${t(`months.${month}`)} ${dayYear}`;
+              })()}
+            </span>
+          )}
         </div>
         <div className="flex justify-start pl-2 gap-2 items-center mb-4">
-          <p className="whitespace-pre-line">
-            Author:
-          </p>
+          <p className="whitespace-pre-line">{t(`author`)}:</p>
           <p className="text-gray-300 dark:text-gray-600 whitespace-pre-line">
             User123
           </p>
@@ -84,9 +91,7 @@ export default function PostPage() {
           <div className="prose dark:prose-invert max-w-none">
             {Array.from({ length: 3 }).map((_, i) => (
               <React.Fragment key={i}>
-                <p>
-                  {post.body.repeat(3)}
-                </p>
+                <p>{post.body.repeat(3)}</p>
                 <br />
               </React.Fragment>
             ))}

@@ -1,0 +1,79 @@
+{
+  "common": {
+    "search": "Ara",
+    "write_here": "Buraya yazın...",
+    "blog": "Blog",
+    "toggle_theme": "Tema değiştir"
+  },
+  "posts": {
+    "recent": "Son Yazılar",
+    "featured": "Öne Çıkan Yazılar",
+    "most_read": "En Çok Okunanlar"
+  },
+  "categories": {
+    "Finance": "Finans",
+    "Invest": "Yatırım",
+    "Work": "İş",
+    "Money": "Para",
+    "Investment": "Yatırım",
+    "News": "Haber",
+    "All": "Tümü"
+  },
+  "navbar": {
+    "about": "Hakkımızda",
+    "faq": "SSS",
+    "traders_library": "Trader Kütüphanesi",
+    "affiliate": "Ortaklık",
+    "leaderboard": "Lider Tablosu",
+    "trading_place": "Trading Yeri"
+  },
+  "titles": {
+    "most_read": "En Çok Okunanlar",
+    "featured": "Öne Çıkan Yazılar",
+    "recent": "Son Yazılar",
+    "categories": "Kategoriler",
+    "blog": "Blog"
+  },
+  "footer": {
+    "company": "Şirket",
+    "about": "Hakkımızda",
+    "careers": "Kariyer",
+    "contact": "İletişim",
+    "legal": "Yasal",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "cookies": "Çerez Politikası",
+    "social": "Sosyal",
+    "follow_us": "Bizi Takip Edin",
+    "newsletter": "Bülten",
+    "subscribe": "Abone Ol",
+    "email_placeholder": "E-posta adresinizi girin",
+    "economic_calendar": "Ekonomik Takvim",
+    "trading_updates": "İşlem Güncellemeleri",
+    "symbols": "Semboller",
+    "market_hours": "Pazar Saatleri",
+    "privacy_policy": "Gizlilik Politikası",
+    "terms_conditions": "Kullanım Koşulları",
+    "cookies_policy": "Çerez Politikası",
+    "lexicon": "Sözlük",
+    "faq": "SSS",
+    "blog": "Blog",
+    "recent": "Son Yazılar",
+    "featured": "Öne Çıkan Yazılar",
+    "most_read": "En Çok Okunanlar",
+    "x": "X",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "linkedin": "LinkedIn",
+    "discord": "Discord"
+  },
+  "author": "Yazar",
+  "months": {
+    "Sep": "Eylül",
+    "Oct": "Ekim",
+    "Nov": "Kasım",
+    "Dec": "Aralık",
+    "Jan": "Ocak"
+  }
+} 

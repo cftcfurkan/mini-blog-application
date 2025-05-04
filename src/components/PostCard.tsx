@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Post } from "@/services/api";
 import Tag from "./Tags";
+import { useTranslation } from "react-i18next";
 
 type PostCardVariant = "default" | "compact" | "mostRead";
 
@@ -20,7 +21,7 @@ const PostCard = ({
   date,
 }: PostCardProps) => {
   const { id, title, body } = post;
-
+  const { t } = useTranslation();
   return (
     <Link href={{ pathname: `/posts/${id}`, query: { category, date } }}>
       {variant === "compact" && (
@@ -34,9 +35,7 @@ const PostCard = ({
               sizes="48px"
             />
           </div>
-          <div className="text-xl line-clamp-3">
-            {title}
-          </div>
+          <div className="text-xl line-clamp-3">{title}</div>
         </div>
       )}
 
@@ -54,12 +53,21 @@ const PostCard = ({
           <div className="flex-1 flex flex-col gap-5 h-50">
             <div className="flex items-center gap-5 p-1">
               <Tag key={category} selected={true} onClick={() => {}}>
-                {category}
+                {t(`categories.${category}`)}
               </Tag>
-              {date && <span className="text-xs">{date}</span>}
+              {date && (
+                <span className="text-xs">
+                  {(() => {
+                    const parts = date.split(" ");
+                    const month = parts[0];
+                    const dayYear = parts.slice(1).join(" ");
+                    return `${t(`months.${month}`)} ${dayYear}`;
+                  })()}
+                </span>
+              )}
             </div>
             <div className="font-semibold text-lg line-clamp-2">
-              {title}
+              {t(`${title}`)}
             </div>
             <div className="text-xs text-[#a09bb7] line-clamp-2">{body}</div>
           </div>
@@ -82,9 +90,18 @@ const PostCard = ({
               </div>
               <div className="flex items-center gap-5">
                 <Tag key={category} selected={true} onClick={() => {}}>
-                  {category}
+                  {t(`categories.${category}`)}
                 </Tag>
-                {date && <span className="text-xs text-[#fff]">{date}</span>}
+                {date && (
+                <span className="text-xs">
+                  {(() => {
+                    const parts = date.split(" ");
+                    const month = parts[0];
+                    const dayYear = parts.slice(1).join(" ");
+                    return `${t(`months.${month}`)} ${dayYear}`;
+                  })()}
+                </span>
+              )}
               </div>
             </div>
           </div>
