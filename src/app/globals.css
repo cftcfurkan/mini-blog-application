@@ -2,35 +2,31 @@
 
 :root {
   --background: transparent;
+  --foreground: #171717; /* 🟢 Light mode text: siyah */
 }
 
 [data-theme="dark"] {
   --background: transparent;
-}
-[data-theme="light"] {
-  --background: white;
+  --foreground: #ededed; /* ⚫ Dark mode text: beyaz */
 }
 
+[data-theme="light"] {
+  --background: white;
+  --foreground: #171717;
+}
 
 html,
 body {
   background-color: var(--background);
-  color: inherit;
-  transition: background-color 0.3s ease;
+  color: var(--foreground); /* 🟢 Bu satır yazı rengini temaya göre belirler */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #ededed;
-  }
 }
 
 body {

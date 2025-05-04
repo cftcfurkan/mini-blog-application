@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
-import DarkModeToggle from '@/components/DarkModeToggle';
 import Footer from './Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 
