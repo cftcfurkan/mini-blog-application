@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
-
+import { useTheme } from "next-themes";
 
 const footerLinks = [
   ["About us", "Contact us", "Careers"],
@@ -31,9 +29,7 @@ const socialIcons = [
 ];
 
 const Footer = () => {
-
-const mode = useSelector((state: RootState) => state.theme.mode);
-const isDark = mode === 'dark';
+  const { theme } = useTheme();
 
   return (
     <footer className="w-full">
@@ -80,9 +76,9 @@ const isDark = mode === 'dark';
                   aria-label={icon.name}
                   className="text-[#d1cbe9] hover:text-white transition"
                   style={{
-                    backgroundColor: !isDark ? "black" : "",
-                    padding: !isDark ? "2px" : "",
-                    borderRadius: !isDark ? "50%" : "",
+                    backgroundColor: theme !== "dark" ? "black" : "",
+                    padding: theme !== "dark" ? "2px" : "",
+                    borderRadius: theme !== "dark" ? "50%" : "",
                   }}
                 >
                   <Image
@@ -105,9 +101,9 @@ const isDark = mode === 'dark';
                 className="text-[#d1cbe9] hover:text-white transition"
                 aria-label={icon.name}
                 style={{
-                  backgroundColor: !isDark ? "black" : "",
-                  padding: !isDark ? "2px" : "",
-                  borderRadius: !isDark ? "50%" : "",
+                  backgroundColor: theme !== "dark" ? "black" : "",
+                  padding: theme !== "dark" ? "2px" : "",
+                  borderRadius: theme !== "dark" ? "50%" : "",
                 }}
               >
                 <Image src={icon.src} alt={icon.name} width={24} height={24} />
@@ -134,23 +130,23 @@ const isDark = mode === 'dark';
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 h-50 md:h-auto">
           <div className="flex-1 flex justify-end">
             <span className="ml-1">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  className="ml-1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 6L8 10L12 6"
-                    stroke="#7F5FFF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="#7F5FFF"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>

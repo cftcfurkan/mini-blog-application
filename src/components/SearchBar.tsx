@@ -1,20 +1,25 @@
+'use client';
+
 import React, { useState } from "react";
 import Image from "next/image";
 import { tags } from "@/data/tags";
 import Tag from "./Tags";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+import { useTheme } from "next-themes";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
-  const isDark = useSelector((state: RootState) => state.theme.isDarkMode);
+  const { theme } = useTheme();
 
-  // isDark'a göre örnek kullanım
-  const inputClass = isDark && "shadow-[0_4px_20px_2px_rgba(0,0,0,0.4)]";
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    onSearch(query);
+  };
 
   return (
     <div className="md:mb-6">
@@ -25,21 +30,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         <div className="relative w-full max-w-5xl">
           <input
             type="text"
+            value={searchQuery}
+            onChange={handleSearch}
             placeholder="Write here..."
             className={`
               w-full pl-6 pr-14 py-4
               rounded-xl
-              text-white
               placeholder:text-[#5a4a7a]
               border border-[#2a204a]
               outline-none
               focus:ring-0
               text-lg
               transition
-              ${isDark ? "shadow-[0_4px_20px_2px_rgba(0,0,0,0.4)]" : ""}
+              ${theme === 'dark' ? "shadow-[0_4px_20px_2px_rgba(0,0,0,0.4)]" : ""}
             `}
             style={{
-              boxShadow: isDark
+              boxShadow: theme === 'dark'
                 ? "inset 10px 2px 16px 0 rgba(60,9,108,0.25)"
                 : undefined,
             }}

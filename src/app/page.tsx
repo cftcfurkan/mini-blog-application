@@ -13,6 +13,7 @@ import MostReadPosts from "@/components/MostReadPosts";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [posts, setPosts] = useState<Post[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function Home() {
       try {
         const data = await fetchPosts();
         setPosts(data);
-        console.log(data);
+        setFilteredPosts(data);
       } catch (error) {
         console.error("Error fetching posts:", error);
       } finally {
@@ -30,6 +31,18 @@ export default function Home() {
 
     loadPosts();
   }, []);
+
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setFilteredPosts(posts);
+      return;
+    }
+
+    const filtered = posts.filter(post =>
+      post.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredPosts(filtered);
+  }, [searchQuery, posts]);
 
   if (isLoading) {
     return (
@@ -46,14 +59,14 @@ export default function Home() {
       <SearchBar onSearch={setSearchQuery} />
       <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 flex flex-col gap-8">
-          <RecentPosts posts={posts} />
+          <RecentPosts posts={filteredPosts} />
           <div className="hidden md:block">
-            <FeaturedPosts posts={posts} />
+            <FeaturedPosts posts={filteredPosts} />
           </div>
         </div>
         <div className="flex flex-col gap-8">
           <Categories />
-          <MostReadPosts posts={posts} variant="compact" />
+          <MostReadPosts posts={filteredPosts} variant="compact" />
         </div>
       </div>
     </Layout>
