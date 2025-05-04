@@ -11,7 +11,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
 
   return (
     <section>
-      <h2 className="text-white text-3xl font-bold mb-3">Recent post</h2>
+      <h2 className="text-3xl font-bold mb-3">Recent post</h2>
       <div className="grid grid-cols-2 gap-4">
         {visiblePostsMobile.map((post, index) => (
           <div

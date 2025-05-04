@@ -53,20 +53,20 @@ export default function PostPage() {
   return (
     <Layout>
       <>
-        <p className="text-4xl w-full font-bold text-gray-900 dark:text-white mb-4">
+        <p className="text-4xl w-full font-bold mb-4">
           {post.title}
         </p>
         <div className="flex justify-start gap-4 items-center mb-4">
           <Tag selected>{category}</Tag>
-          <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+          <p className=" whitespace-pre-line">
             {formattedDate}
           </p>
         </div>
         <div className="flex justify-start gap-2 items-center mb-4">
-          <p className="text-gray-600 dark:text-gray-600 whitespace-pre-line">
+          <p className="whitespace-pre-line">
             Author:
           </p>
-          <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+          <p className="text-gray-300 dark:text-gray-600 whitespace-pre-line">
             User123
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function PostPage() {
           <div className="prose dark:prose-invert max-w-none">
             {Array.from({ length: 3 }).map((_, i) => (
               <React.Fragment key={i}>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p>
                   {post.body.repeat(3)}
                 </p>
                 <br />

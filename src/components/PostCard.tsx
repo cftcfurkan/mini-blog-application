@@ -34,7 +34,7 @@ const PostCard = ({
               sizes="48px"
             />
           </div>
-          <div className="text-xl  text-white line-clamp-3">
+          <div className="text-xl line-clamp-3">
             {title}
           </div>
         </div>
@@ -56,9 +56,9 @@ const PostCard = ({
               <Tag key={category} selected={true} onClick={() => {}}>
                 {category}
               </Tag>
-              {date && <span className="text-xs text-[#fff]">{date}</span>}
+              {date && <span className="text-xs">{date}</span>}
             </div>
-            <div className="font-semibold text-white text-lg line-clamp-2">
+            <div className="font-semibold text-lg line-clamp-2">
               {title}
             </div>
             <div className="text-xs text-[#a09bb7] line-clamp-2">{body}</div>
