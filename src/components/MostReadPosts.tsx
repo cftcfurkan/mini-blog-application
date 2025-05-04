@@ -17,9 +17,9 @@ const MostReadPosts = ({
     <section>
       <h2 className="text-white text-xl font-bold mb-3">Most read</h2>
       <div
-        className={`flex flex-col gap-3 ${
-          variant === "compact" ? "max-h-[1210px] overflow-auto pr-2" : ""
-        }`}
+       className={`flex flex-col gap-3 ${
+        variant === "compact" ? "max-h-[900px] md:max-h-[1210px] md:overflow-auto overflow-hidden" : ""
+      }`}
       >
         {limitedPosts.map((post) => (
           <PostCard

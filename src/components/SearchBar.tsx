@@ -10,7 +10,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
     return (
-    <div className="mb-6">
+    <div className="md:mb-6">
       <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-2 flex justify-center">
         <p className="text-white md:text-5xl text-3xl font-bold">Blog</p>
       </div>
@@ -53,7 +53,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 w-full justify-start max-w-5xl ">
+        <div className="flex flex-wrap gap-2 w-full justify-start max-w-5xl hidden md:block">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <Tag

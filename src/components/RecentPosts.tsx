@@ -6,26 +6,33 @@ import { categories } from "@/data/categories";
 import Image from "next/image";
 
 const RecentPosts = ({ posts }: { posts: Post[] }) => {
-  const firstTwo = posts.slice(0, 2);
+  const visiblePostsMobile = posts.slice(0, 4);
   const nextFour = posts.slice(2, 6);
 
   return (
     <section>
-      <h2 className="text-white text-xl font-bold mb-3">Recent post</h2>
+      <h2 className="text-white text-2xl font-bold mb-3">Recent post</h2>
       <div className="grid grid-cols-2 gap-4">
-        {firstTwo.map((post) => (
-          <PostCard
+        {visiblePostsMobile.map((post, index) => (
+          <div
             key={post.id}
-            post={post}
-            {...post}
-            category={
-              categories[Math.floor(Math.random() * categories.length)].name
-            }
-            date={dates[Math.floor(Math.random() * dates.length)].date}
-            variant="default"
-          />
+            className={`col-span-2 ${
+              index < 2 ? "md:col-span-1" : "md:hidden"
+            }`}
+          >
+            <PostCard
+              post={post}
+              {...post}
+              category={
+                categories[Math.floor(Math.random() * categories.length)].name
+              }
+              date={dates[Math.floor(Math.random() * dates.length)].date}
+              variant="default"
+            />
+          </div>
         ))}
-        <div className="col-span-2 rounded-xl overflow-hidden">
+
+        <div className="col-span-2 rounded-xl overflow-hidden hidden md:block">
           <div className="relative w-full aspect-[16/13]">
             <Image
               src="https://picsum.photos/seed/1/1000/1000"
@@ -36,15 +43,16 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
           </div>
         </div>
         {nextFour.map((post) => (
-          <PostCard
-            key={post.id}
-            post={post}
-            {...post}
-            category={
-              categories[Math.floor(Math.random() * categories.length)].name
-            }
-            date={dates[Math.floor(Math.random() * dates.length)].date}
-          />
+          <div key={post.id} className="hidden md:block col-span-1">
+            <PostCard
+              post={post}
+              {...post}
+              category={
+                categories[Math.floor(Math.random() * categories.length)].name
+              }
+              date={dates[Math.floor(Math.random() * dates.length)].date}
+            />
+          </div>
         ))}
       </div>
     </section>

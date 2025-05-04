@@ -15,8 +15,14 @@ const Categories = () => {
             className="flex justify-between items-center py-2 border-b border-[#a09bb7]"
           >
             <span className="text-[#fff]">{cat.name}</span>
-            <div className="p-[2px] rounded-xl bg-gradient-to-r from-[#7F5FFF] to-[#01C8FF] inline-block">
-              <span className="bg-[#000000] text-white text-sm px-4 py-1 rounded-xl block">
+            <div className="inline-block rounded-xl md:bg-gradient-to-r md:from-[#7F5FFF] md:to-[#01C8FF] p-[2px]">
+              <span
+                className="block rounded-xl px-4 py-1 text-sm text-white md:hidden"
+                style={{ backgroundColor: cat.color }}
+              >
+                {cat.count}
+              </span>
+              <span className="hidden md:block bg-[#000000] rounded-xl px-4 py-1 text-sm text-white">
                 {cat.count}
               </span>
             </div>
@@ -29,11 +35,10 @@ const Categories = () => {
             key={tag}
             selected={selectedTags.includes(tag)}
             onClick={() => {
-              setSelectedTags(
-                (prev) =>
-                  prev.includes(tag)
-                    ? prev.filter((t) => t !== tag)
-                    : [...prev, tag]
+              setSelectedTags((prev) =>
+                prev.includes(tag)
+                  ? prev.filter((t) => t !== tag)
+                  : [...prev, tag]
               );
             }}
           >
