@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Mini Blog Application
 
-## Getting Started
+🌟 Project Overview
 
-First, run the development server:
+This project is a simple blog application developed as a Frontend Developer Test Project. It demonstrates skills in component-based architecture, TypeScript, responsive design, and API integration. The app allows users to browse a list of blog posts and view each post's details.
 
-```bash
-npm run dev
+🧰 Features Implemented
+
+1. Home Page
+
+Displays a list of blog posts using placeholder images.
+
+Shows post title and short excerpt.
+
+Clickable items navigate to the detailed post view.
+
+2. Blog Post Detail Page
+
+Full content display of the selected post.
+
+Includes a placeholder image header.
+
+3. Bonus Features
+
+⌚ Loading Spinner during data fetch.
+
+🌚 Dark Mode toggle.
+
+🌍 Language switcher (i18n) support.
+
+⌕ Search input to filter posts by title.
+
+🚀 Technologies Used
+
+Framework: React.js with Next.js
+
+Language: TypeScript
+
+Styling: TailwindCSS
+
+Routing: Next.js built-in routing
+
+Data Fetching: Fetch API
+
+Internationalization: react-i18next
+
+Icons: Custom & static assets
+
+⚙️ Installation & Setup
+
+Clone the repository
+
+git clone [https://github.com/cftcfurkan/mini-blog](https://github.com/cftcfurkan/mini-blog-applicatio).git
+cd mini-blog-application
+
+Install dependencies
+
+yarn install
 # or
+npm install
+
+Run the development server
+
 yarn dev
 # or
-pnpm dev
-# or
-bun dev
-```
+npm run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit the app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔗 API Used
 
-## Learn More
+Get all posts:
+https://jsonplaceholder.typicode.com/posts
 
-To learn more about Next.js, take a look at the following resources:
+Get single post:
+https://jsonplaceholder.typicode.com/posts/:id
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🖊️ Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Minor design deviations have been handled with consideration to responsiveness and accessibility.
 
-## Deploy on Vercel
+📄 Folder Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/components
+/pages
+/data
+/hooks
+/services
+/public
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✨ Author
+
+Name: Furkan Çiftci
+
+GitHub: https://github.com/cftcfurkan
