@@ -56,7 +56,7 @@ export default function PostPage() {
     <Layout>
       <>
         <p className="text-4xl w-full font-bold mb-4">
-          {t(`posts.${post.title}`)}
+          {t(`${post.title}`)}
         </p>
         <div className="flex justify-start gap-4 items-center mb-4">
           <Tag selected>{t(`categories.${category}`)}</Tag>
@@ -81,7 +81,7 @@ export default function PostPage() {
           <div className="relative h-128 w-full">
             <Image
               src={`https://picsum.photos/seed/${post.id}/800/400`}
-              alt={post.title}
+              alt={post.id}
               fill
               className="object-cover"
             />

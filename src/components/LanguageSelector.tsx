@@ -17,7 +17,11 @@ export default function LanguageSelector() {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    const detectedLanguage = navigator.language.split('-')[0];
+    if (languages.some(lang => lang.code === detectedLanguage)) {
+      i18n.changeLanguage(detectedLanguage);
+    }
+  }, [i18n]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
