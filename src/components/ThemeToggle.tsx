@@ -1,6 +1,5 @@
 'use client';
-
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { useAppDispatch} from '@/store/hooks';
 import { toggleTheme } from '@/store/themeSlice';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -8,7 +7,6 @@ import { useEffect, useState } from 'react';
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const dispatch = useAppDispatch();
-  const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -27,7 +25,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={handleToggle}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+      className="p-2 rounded-full cursor-pointer transition-colors duration-300"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (

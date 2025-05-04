@@ -76,6 +76,11 @@ const Footer = () => {
                   href="#"
                   aria-label={icon.name}
                   className="text-[#d1cbe9] hover:text-white transition"
+                  style={{
+                    backgroundColor: !isDark ? "black" : "",
+                    padding: !isDark ? "2px" : "",
+                    borderRadius: !isDark ? "50%" : "",
+                  }}
                 >
                   <Image
                     src={icon.src}
