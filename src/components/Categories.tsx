@@ -9,14 +9,14 @@ const Categories = () => {
   const isMobile = useIsMobile();
   return (
     <section>
-      <h2 className="text-white text-3xl font-bold mb-3">Categories</h2>
+      <h2 className="text-3xl font-bold mb-3">Categories</h2>
       <ul className="mb-4">
         {categories.map((cat, i) => (
           <li
             key={i}
             className="flex justify-between items-center py-2 border-b border-[#a09bb7]"
           >
-            <span className="text-[#fff]">{cat.name}</span>
+            <span>{cat.name}</span>
             <div className="inline-block rounded-xl md:bg-gradient-to-r md:from-[#7F5FFF] md:to-[#01C8FF] p-[2px]">
               <span
                 className="block rounded-xl px-4 py-1 text-sm text-white md:hidden"

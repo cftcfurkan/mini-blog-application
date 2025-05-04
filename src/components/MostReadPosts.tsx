@@ -15,7 +15,7 @@ const MostReadPosts = ({
 
   return (
     <section>
-      <h2 className="text-white text-3xl font-bold mb-3">Most read</h2>
+      <h2 className="text-3xl font-bold mb-3">Most read</h2>
       <div
        className={`flex flex-col gap-3 ${
         variant === "compact" ? "max-h-[900px] md:max-h-[1210px] md:overflow-auto overflow-hidden" : ""

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { tags } from "@/data/tags";
 import Tag from "./Tags";
-
+import { useSelector } from "react-redux";
+ import { RootState } from "@/store/store";
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
@@ -12,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     return (
     <div className="md:mb-6">
       <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-6rec flex justify-center">
-        <p className="text-white md:text-5xl text-3xl font-bold">Blog</p>
+        <p className="md:text-5xl text-3xl font-bold">Blog</p>
       </div>
       <div className="w-full flex flex-col items-center gap-4 justify-center">
         <div className="relative w-full max-w-5xl">

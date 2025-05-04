@@ -53,22 +53,16 @@ export default function PostPage() {
   return (
     <Layout>
       <>
-        <p className="text-4xl w-full font-bold text-gray-900 dark:text-white mb-4">
-          {post.title}
-        </p>
+        <p className="text-4xl w-full font-bold mb-4">{post.title}</p>
         <div className="flex justify-start gap-4 items-center mb-4">
           <Tag selected>{category}</Tag>
-          <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
-            {formattedDate}
-          </p>
+          <p className=" whitespace-pre-line">{formattedDate}</p>
         </div>
         <div className="flex justify-start gap-2 items-center mb-4">
           <p className="text-gray-600 dark:text-gray-600 whitespace-pre-line">
             Author:
           </p>
-          <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
-            User123
-          </p>
+          <p className=" whitespace-pre-line">User123</p>
         </div>
         <article className="rounded-lg overflow-hidden">
           <div className="relative h-128 w-full">
@@ -84,9 +78,7 @@ export default function PostPage() {
           <div className="prose dark:prose-invert max-w-none">
             {Array.from({ length: 3 }).map((_, i) => (
               <React.Fragment key={i}>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {post.body.repeat(3)}
-                </p>
+                <p>{post.body.repeat(3)}</p>
                 <br />
               </React.Fragment>
             ))}
@@ -94,7 +86,10 @@ export default function PostPage() {
         </div>
       </>
       <div className="flex flex-col md:flex-row gap-8">
-        <MostReadPosts posts={posts} variant={isMobile ? "compact" : "mostRead"} />
+        <MostReadPosts
+          posts={posts}
+          variant={isMobile ? "compact" : "mostRead"}
+        />
         <Categories />
       </div>
     </Layout>
