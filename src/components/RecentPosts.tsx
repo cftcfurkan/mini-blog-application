@@ -11,7 +11,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
 
   return (
     <section>
-      <h2 className="text-white text-2xl font-bold mb-3">Recent post</h2>
+      <h2 className="text-white text-3xl font-bold mb-3">Recent post</h2>
       <div className="grid grid-cols-2 gap-4">
         {visiblePostsMobile.map((post, index) => (
           <div
@@ -22,6 +22,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
           >
             <PostCard
               post={post}
+              key={post.id}
               {...post}
               category={
                 categories[Math.floor(Math.random() * categories.length)].name
@@ -45,6 +46,7 @@ const RecentPosts = ({ posts }: { posts: Post[] }) => {
         {nextFour.map((post) => (
           <div key={post.id} className="hidden md:block col-span-1">
             <PostCard
+              key={post.id}
               post={post}
               {...post}
               category={

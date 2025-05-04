@@ -34,7 +34,7 @@ const PostCard = ({
               sizes="48px"
             />
           </div>
-          <div className="text-xl font-semibold text-white line-clamp-3">
+          <div className="text-xl  text-white line-clamp-3">
             {title}
           </div>
         </div>

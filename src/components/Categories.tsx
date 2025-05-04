@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { categories } from "@/data/categories";
 import { tags } from "@/data/tags";
 import Tag from "./Tags";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Categories = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
+  const isMobile = useIsMobile();
   return (
     <section>
-      <h2 className="text-white text-xl font-bold mb-3">Categories</h2>
+      <h2 className="text-white text-3xl font-bold mb-3">Categories</h2>
       <ul className="mb-4">
         {categories.map((cat, i) => (
           <li

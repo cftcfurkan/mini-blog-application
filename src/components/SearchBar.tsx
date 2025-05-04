@@ -11,7 +11,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [selectedTags, setSelectedTags] = useState<string[]>([tags[0]]);
     return (
     <div className="md:mb-6">
-      <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-2 flex justify-center">
+      <div className="max-w-7xl mx-auto px-4 md:pb-8 pb-6rec flex justify-center">
         <p className="text-white md:text-5xl text-3xl font-bold">Blog</p>
       </div>
       <div className="w-full flex flex-col items-center gap-4 justify-center">

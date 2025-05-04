@@ -10,7 +10,7 @@ interface FeaturedPostsProps {
 
 const FeaturedPosts = ({ posts }: FeaturedPostsProps) => (
   <section>
-    <h2 className="text-white text-xl font-bold mb-3">Featured post</h2>
+    <h2 className="text-white text-3xl font-bold mb-3">Featured post</h2>
     <div className="grid grid-cols-3 gap-4">
     {posts
         .sort(() => Math.random() - 0.5)

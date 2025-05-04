@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import { fetchPosts, getPostById } from "@/services/api";
@@ -10,11 +9,12 @@ import { useSearchParams, useParams } from "next/navigation";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import Categories from "@/components/Categories";
 import MostReadPosts from "@/components/MostReadPosts";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function PostPage() {
   const searchParams = useSearchParams();
   const params = useParams();
-
+  const isMobile = useIsMobile();
   const id = params.id;
   const category = searchParams.get("category") || "Unknown";
   const date = searchParams.get("date") || "Unknown";
@@ -83,18 +83,18 @@ export default function PostPage() {
         <div className="py-6">
           <div className="prose dark:prose-invert max-w-none">
             {Array.from({ length: 3 }).map((_, i) => (
-              <>
-                <p key={i} className="text-gray-600 dark:text-gray-300">
+              <React.Fragment key={i}>
+                <p className="text-gray-600 dark:text-gray-300">
                   {post.body.repeat(3)}
                 </p>
                 <br />
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
       </>
-      <div className="flex flex-row gap-8">
-        <MostReadPosts posts={posts} variant="mostRead" />
+      <div className="flex flex-col md:flex-row gap-8">
+        <MostReadPosts posts={posts} variant={isMobile ? "compact" : "mostRead"} />
         <Categories />
       </div>
     </Layout>
