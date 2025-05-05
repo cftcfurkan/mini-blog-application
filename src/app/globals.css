@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: transparent;
+  --background: white;
   --foreground: #171717; /* 🟢 Light mode text: siyah */
 }
 
 [data-theme="dark"] {
-  --background: transparent;
+  --background: #1b0a3f;
   --foreground: #ededed; /* ⚫ Dark mode text: beyaz */
 }
 
