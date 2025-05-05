@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: white;
-  --foreground: #171717; /* 🟢 Light mode text: siyah */
+  --background: #1b0a3f;
+  --foreground: #171717;
 }
 
 [data-theme="dark"] {
-  --background: #1b0a3f;
-  --foreground: #ededed; /* ⚫ Dark mode text: beyaz */
+  --background: transparent;
+  --foreground: #ededed;
 }
 
 [data-theme="light"] {
@@ -18,7 +18,7 @@
 html,
 body {
   background-color: var(--background);
-  color: var(--foreground); /* 🟢 Bu satır yazı rengini temaya göre belirler */
+  color: var(--foreground);
 }
 
 @theme inline {
@@ -38,7 +38,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7561FF; /* mor-mavi geçişli */
+  background: #7561FF;
   border-radius: 10px;
 }
 [data-theme="light"] ::-webkit-scrollbar-thumb {
