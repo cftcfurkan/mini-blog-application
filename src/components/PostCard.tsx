@@ -93,7 +93,7 @@ const PostCard = ({
                   {t(`categories.${category}`)}
                 </Tag>
                 {date && (
-                <span className="text-xs">
+                <span className="text-xs text-white">
                   {(() => {
                     const parts = date.split(" ");
                     const month = parts[0];
